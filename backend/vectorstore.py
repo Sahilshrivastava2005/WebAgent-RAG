@@ -1,10 +1,13 @@
 import os
+os.environ["USE_TF"] = "0"
+os.environ["USE_TORCH"] = "1"
+
 from pinecone import Pinecone, ServerlessSpec
 from langchain_pinecone import PineconeVectorStore
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
-from config import PINECONE_API_KEY
+from backend.config import PINECONE_API_KEY
 
 os.environ["PINECONE_API_KEY"] = PINECONE_API_KEY
 
